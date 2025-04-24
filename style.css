@@ -1,0 +1,255 @@
+
+/* Жалпы стильдер */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Бөлімдердің жалпы стильдері */
+section {
+    min-height: 100vh;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.section-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Навигация */
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #fff !important;
+    margin: 0 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #f8f9fa !important;
+}
+
+/* Басты бөлім */
+#main {
+    background-image: url('data:image/jpeg;base64,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');
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.main-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+    padding: 10px 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Қызметтер бөлімі */
+#services {
+    background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+/* Бөлмелер бөлімі */
+#rooms {
+    background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+}
+
+.room-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.room-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.room-body {
+    padding: 20px;
+}
+
+.room-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3498db;
+}
+
+.add-to-cart {
+    width: 100%;
+}
+
+/* Пікірлер бөлімі */
+#reviews {
+    background-image: url('https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+}
+
+.review-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.review-author {
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.review-rating {
+    color: #f39c12;
+    margin-bottom: 15px;
+}
+
+/* Байланыс бөлімі */
+#contact {
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+}
+
+.contact-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+textarea.form-control {
+    height: 150px;
+}
+
+/* Футер */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #3498db;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #3498db;
+    transform: translateY(-5px);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 30px;
+    color: #bdc3c7;
+}
+
+/* Адаптивтік стильдер */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .main-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+}
